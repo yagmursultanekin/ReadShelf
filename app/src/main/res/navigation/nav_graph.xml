@@ -29,4 +29,13 @@
         android:name="com.readshelf.ui.settings.SettingsFragment"
         android:label="Ayarlar" />
 
+    <fragment
+        android:id="@+id/bookDetailFragment"
+        android:name="com.readshelf.ui.detail.BookDetailFragment"
+        android:label="Kitap Detayı">
+        <argument
+            android:name="book_json"
+            app:argType="string" />
+    </fragment>
+
 </navigation>

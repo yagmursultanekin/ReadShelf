@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.readshelf.R
 import com.readshelf.data.BookItem
 import com.readshelf.data.BookResponse
 import com.readshelf.data.RetrofitInstance
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -43,6 +45,15 @@ class SearchFragment : Fragment() {
             } else {
                 Toast.makeText(requireContext(), "Lütfen bir kitap adı girin", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        lvBooks.setOnItemClickListener { _, _, position, _ ->
+            val book = bookList[position]
+            val bookJson = Gson().toJson(book)
+            val bundle = Bundle().apply {
+                putString("book_json", bookJson)
+            }
+            findNavController().navigate(R.id.bookDetailFragment, bundle)
         }
     }
 
