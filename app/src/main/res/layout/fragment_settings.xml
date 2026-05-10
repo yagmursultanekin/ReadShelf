@@ -62,6 +62,13 @@
         android:layout_height="wrap_content"
         android:text="Ayarları Kaydet"/>
 
+    <Button
+        android:id="@+id/btnTestNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bildirimi Test Et"
+        android:layout_marginTop="8dp"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
