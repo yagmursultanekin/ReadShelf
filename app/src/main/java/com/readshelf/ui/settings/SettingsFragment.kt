@@ -48,8 +48,13 @@ class SettingsFragment : Fragment() {
         btnTestNotification.setOnClickListener {
             val intent = Intent(requireContext(), NotificationReceiver::class.java)
             requireContext().sendBroadcast(intent)
-            Toast.makeText(requireContext(), "Bildirim gönderildi!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Bildirim gonderildi!", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        loadSettings()
     }
 
     private fun saveSettings() {
